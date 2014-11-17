@@ -1,0 +1,8 @@
+var GLOBAL1;
+var GLOBAL2;
+
+function f(x, y) {
+	print("The output is: " + (x * y));
+	print(GLOBAL1);
+	print(GLOBAL2);
+}

@@ -1,0 +1,18 @@
+/* a testing comment */
+#ifdef OK
+	#define RIGHT
+	#undef RIGHT
+	
+	function a() {
+		normal code here
+	}
+	"this shouldn't matter, really"
+	/* a testing comment */
+#else
+	#ifndef LALALA 
+		ouky-doky
+		/* a testing comment */
+		#error THE ERROR IS THERE'S NO ERROR
+	#endif
+	#error NANANANA nanana safgh
+#endif

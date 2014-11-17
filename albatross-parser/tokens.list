@@ -1,0 +1,11 @@
+(
+	(VAR "var" 1) (IDENTIFIER "global1" 1) (SEMICOLON ";" 1)
+	(VAR "var" 2) (IDENTIFIER "global2" 2) (SEMICOLON ";" 2)
+	
+	(FUNCTION "function" 4) (IDENTIFIER "main" 4) (BRSTART "(" 4) (IDENTIFIER "argc" 4) (COMMA "," 4) (IDENTIFIER "argv" 4) (BREND ")" 4) (SEMICOLON ";" 4)
+	(FUNCTION "function" 5) (IDENTIFIER "main" 5) (BRSTART "(" 5) (IDENTIFIER "argc" 5) (COMMA "," 5) (IDENTIFIER "argv" 5) (BREND ")" 5) (CBSTART "{" 5)
+		(IDENTIFIER "wait" 6) (BRSTART "(" 6) (BREND ")" 6) (SEMICOLON ";" 6)
+		
+		(RETURN "return" 8) (NUMBER "0" 8) (SEMICOLON ";" 8)
+	(CBEND "}" 9)
+)

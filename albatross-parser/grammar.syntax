@@ -1,0 +1,45 @@
+input:
+	(~rule)
+	| 
+	;
+	
+rule:
+	global_declaration SEMICOLON
+	| function_declaration SEMICOLON
+	| function_definition
+	;
+global_declaration:
+	"var" IDENTIFIER
+	;
+
+function_head:
+	FUNCTION IDENTIFIER BRSTART [IDENTIFIER [(COMMA IDENTIFIER)]] BREND
+	;
+function_declaration:
+	function_head
+	;
+function_definition:
+	function_head CBSTART [(statement SEMICOLON)] CBEND
+	;
+
+statement:
+	RETURN IDENTIFIER
+	| local_declaration
+	| assignment
+	;
+local_declaration:
+	VAR IDENTIFIER
+	| VAR IDENTIFIER EQUALS EXPRESSION
+	;
+assignment:
+	IDENTIFIER EQUALS EXPRESSION
+	;
+call:
+	IDENTIFIER BRSTART [IDENTIFIER [(COMMA IDENTIFIER)]] BREND
+	;
+
+expression:
+	NUMBER
+	| STRING
+	| NULL
+	;
