@@ -45,11 +45,12 @@ TokenForm* Parser::parse_tokenform(Tokenizer::token_iterator & it) {
 		return nullptr;
 
 	string regex = t->getString();
-	size_t start = 0;
+	/*size_t start = 0;
 	while((start = regex.find('\\', start)) != string::npos) {
 		regex.replace(start, 1, "\\\\");
 		start += 2;
-	}
+	}*/
+	//TELL ME THE NAME OF THAT STUPID DUMBASS WHO WROTE THIS!!! IT DOESNT ******* WORK!!!
 
 	it++; //point at the semicolon at the end
 	return new TokenForm(name, attributes, importance, regex, line);

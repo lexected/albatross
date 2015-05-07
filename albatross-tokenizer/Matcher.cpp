@@ -75,7 +75,7 @@ TokenRule::Action Matcher::match_compound(Matcher::MatchState & state, TokenComp
 TokenRule::Action Matcher::match_form(MatchState & state, TokenForm* form) {
 	smatch match;
 	try {
-		if(!std::regex_match(state.it, state.end, match, std::regex(form->regex, std::regex_constants::extended), regex_constants::match_continuous))
+		if(!std::regex_search(state.it, state.end, match, std::regex(form->regex/*, std::regex_constants::extended*/), regex_constants::match_continuous))
 			return TokenRule::Action::None;
 	} catch(regex_error & e) {
 		stringstream iss;
