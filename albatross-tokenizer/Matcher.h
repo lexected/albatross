@@ -51,7 +51,7 @@ private:
 		MatchState()
 			: it(), end(), tokens(), production() { }
 		MatchState(const MatchState & original)
-			: it(original.it), end(original.end), tokens(original.tokens), production(original.production) { }
+			: it(original.it), end(original.end), tokens(original.tokens), production(original.production), line(original.line) { }
 	};
 	static TokenRule::Action match_compound(MatchState & state, TokenCompound* compound);
 	static TokenRule::Action match_form(MatchState & state, TokenForm* form);

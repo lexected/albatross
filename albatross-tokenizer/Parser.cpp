@@ -149,7 +149,7 @@ TokenRule::Action Parser::parse_actions(Tokenizer::token_iterator & it) {
 	}
 	outloop:
 
-	if(it==old)
+	if(it==old) // the default case: when the identifier is not being attributed
 		ret = TokenRule::Action::Consume | TokenRule::Action::Tokenize;
 
 	return ret;

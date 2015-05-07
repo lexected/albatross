@@ -1,5 +1,12 @@
 consume SPACE: "\\s+";
-IDENTIFIER: "[a-zA-Z_][a-zA-Z_0-9]*";
+IDENTIFIER: "[a-zA-Z_][a-zA-Z0-9_]*";
+SEMICOLON: ";";
+LBRACKET: "\\(";
+RBRACKET: "\\)";
+COMMA: ",";
+LBRACE: "\\{";
+RBRACE: "\\}";
+
 begin consume tokenize STRING:
 	required consume STRING_START: "\"";
 	begin produce STRING_CONTENTS:
