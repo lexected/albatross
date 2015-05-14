@@ -9,8 +9,12 @@ RBRACE: "\\}";
 
 begin consume tokenize STRING:
 	required consume STRING_START: "\"";
-		consume produce STRING_CONTENTS_CHARACTERS: "[^\"]*";
+	repeat consume produce STRING_CONTENTS:
+		consume produce STRING_CONTENTS_CHARACTERS: "[^\"\\\\]+";
+		consume produce STRING_CONTENTS_HARACTERS: "\\\\\"";
+	end;
 	required consume STRING_END: "\"";
 end;
+
 
 end;
