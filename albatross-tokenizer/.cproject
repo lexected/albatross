@@ -127,6 +127,8 @@
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/albatross-tokenizer"/>
 		</configuration>
+		<configuration configurationName="debug"/>
+		<configuration configurationName="release"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

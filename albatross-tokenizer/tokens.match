@@ -6,6 +6,9 @@ RBRACKET: "\\)";
 COMMA: ",";
 LBRACE: "\\{";
 RBRACE: "\\}";
+EQUALS: "=";
+
+NUMBER: "[+-]?[0-9]+";
 
 begin consume tokenize STRING:
 	required consume STRING_START: "\"";

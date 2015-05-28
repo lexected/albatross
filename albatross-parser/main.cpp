@@ -49,10 +49,10 @@ int main(int argc, char** argv) {
 		Tokenizer::token_iterator token_iterator = tokens.begin();
 
 		SyntaxTree* syntaxtree = Parser::parse(token_iterator);
-		if(*token_iterator!=Token::Type::EndOfFile)
+		if((*token_iterator) != Token::Type::EndOfFile)
 			throw GeneralException("Grammar parsing failed (not all tokens were consumed)");
 
-		ifstream input_file("tokens.list");
+		ifstream input_file("test.tokenizer");
 		InputTokenizer::inputtoken_list input_tokens = InputTokenizer::parse(input_file);
 		InputTokenizer::inputtoken_iterator inputtoken_iterator = input_tokens.begin();
 

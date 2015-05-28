@@ -29,21 +29,24 @@ SyntaxTree* Parser::parse(Tokenizer::token_iterator & iterator) {
 	return new SyntaxTree(rules, rules.front()->getLine());
 }
 Rule* Parser::parse_rule(Tokenizer::token_iterator & iterator) {
-	Token* identifier = *iterator++;
+	Token* identifier = *iterator;
 	if(identifier != Token::Type::Identifier)
 		return nullptr;
+	iterator++;
 
-	Token* t = *iterator++;
+	Token* t = *iterator;
 	if(t != Token::Type::Colon)
 		return nullptr;
+	iterator++;
 
 	Alternation* alternations;
 	if((alternations = parse_alternations(iterator)) == nullptr)
 		return nullptr;
 
-	t = *iterator++;
+	t = *iterator;
 	if(t != Token::Type::Semicolon)
 		return nullptr;
+	iterator++;
 
 	return new Rule(identifier->getString(), alternations, alternations->getLine());
 }
@@ -65,7 +68,7 @@ Alternation* Parser::parse_alternations(Tokenizer::token_iterator & iterator) {
 	if((alternations = parse_alternations(iterator)) == nullptr)
 		return nullptr;
 
-	//I'm checking if alternation_body!=nullptr because an empty statement can be also (invalidly) placed before other meaningful alternations
+	//I'm checking if alternation_body!=nullptr, because an empty statement can be also (invalidly) placed before other meaningful alternations
 	//TODO: an exception/warning should be thrown, though
 	return new Alternation(alternation_body, alternations, (alternation_body != nullptr ? alternation_body->getLine() : 0));
 }

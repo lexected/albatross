@@ -2,7 +2,13 @@
 var GLOBAL2;
 
 function f(x, y) {
+	var z = 91;
+	read(z);
+	
 	print("The output is: ");
 	print(GLOBAL1);
-	print(GLOBAL2);
+	if(z) {
+		print(GLOBAL2);
+	}
+	
 }

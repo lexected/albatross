@@ -13,7 +13,7 @@ global_declaration:
 	;
 
 function_head:
-	FUNCTION IDENTIFIER BRSTART [IDENTIFIER [(COMMA IDENTIFIER)]] BREND
+	"function" IDENTIFIER BRSTART [IDENTIFIER [(COMMA IDENTIFIER)]] BREND
 	;
 function_declaration:
 	function_head
@@ -23,13 +23,13 @@ function_definition:
 	;
 
 statement:
-	RETURN IDENTIFIER
+	"return" IDENTIFIER
 	| local_declaration
 	| assignment
 	;
 local_declaration:
-	VAR IDENTIFIER
-	| VAR IDENTIFIER EQUALS EXPRESSION
+	"var" IDENTIFIER
+	| "var" IDENTIFIER EQUALS EXPRESSION
 	;
 assignment:
 	IDENTIFIER EQUALS EXPRESSION
